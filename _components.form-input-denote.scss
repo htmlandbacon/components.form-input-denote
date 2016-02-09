@@ -1,0 +1,62 @@
+// form-input-denote.scss ----------------
+// The form input denote component simply adds a visual box treatment before
+// or after an input.
+// ---------------------------------------
+
+// Predefine the variables below in order to alter and enable specific
+// features.
+$form-input-denote-background:            $grey-3 !default;
+$form-input-denote-border:                $grey-1 !default;
+$form-input-denote-border-width:          2px !default;
+$form-input-denote-padding:               8px !default;
+$form-input-denote-padding--tiny:         1px !default;
+$form-input-denote-padding--small:        ($form-input-denote-padding / 2) !default;
+
+$enable--form-input-denote--reverse:      false !default;
+$enable--form-input-denote--border-box:   true !default;
+
+
+
+
+
+.c-form-input-denote {
+	float: left;
+	padding: $form-input-denote-padding--tiny $form-input-denote-padding;
+	border: $form-input-denote-border-width solid $form-input-denote-border;
+	background-color: $form-input-denote-background;
+	font-weight: bold;
+
+	@if ($enable--form-input-denote--reverse == true) {
+
+		&--reverse {
+			float: right;
+		}
+
+	}
+
+	// Generate block format context ---------
+	// ---------------------------------------
+	// 1. Let's make sure the input's parent is set to block.
+	// 2. Use a secret benefit of overflow hidden so it changes the way the
+	//    block interacts with floats. It no longer wraps around floats, but
+	//    rather becomes narrower.
+	// 3. Grow the input to fill all the available space. Without changing
+	//    box sizing the padding values with be included in the width
+	//    calculation (causing clipping), so if you can't change the
+	//    box-sizing property, reduce the width value.
+	&__wrapper {
+		display: block;                                            // [1]
+		overflow: hidden;                                          // [2]
+	}
+
+	&__input {
+
+		@if ($enable--form-input-denote--border-box == true) {
+			box-sizing: border-box;
+		}
+
+		width: 100%;                                               // [3]
+		padding-right: $form-input-denote-padding--small;
+		padding-left: $form-input-denote-padding--small;
+	}
+}
