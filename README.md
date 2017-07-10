@@ -24,6 +24,11 @@ This is an example taken from [Apply for a Budgeting Loan](https://www.gov.uk/bu
 ![Visual example of denote componet from budging loans service](examples/screenshot.png)
 
 
+## Usage
+
+Once this has been installed you will need to include it in your Sass files.
+
+
 links
 
 - [Codepen Demo](http://codepen.io/jonhurrell/pen/wMQmVe?editors=1100)
