@@ -1,6 +1,6 @@
 {
   "name": "components.form-input-denote",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sass partial to style a denote component",
   "main": "N/a",
   "directories": {
